@@ -1,0 +1,74 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="feelingRate">Feeling Rate
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="feelingRate" id="feelingRate" ng-model="vm.teaEvaluationInfo.feelingRate" type="number" step="any" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="colorRate">Color Rate
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="colorRate" id="colorRate" ng-model="vm.teaEvaluationInfo.colorRate" type="number" step="any" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="comments">Comments
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="comments" id="comments" ng-model="vm.teaEvaluationInfo.comments" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="evaluationDate">Evaluation Date
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="evaluationDate" id="evaluationDate" ng-model="vm.teaEvaluationInfo.evaluationDate" type="date" placeholder="YYYY-MM-DD" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="overallRate">Overall Rate
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="overallRate" id="overallRate" ng-model="vm.teaEvaluationInfo.overallRate" type="number" step="any" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="temperature">Temperature
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="temperature" id="temperature" ng-model="vm.teaEvaluationInfo.temperature" type="number" step="any" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="humidity">Humidity
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="humidity" id="humidity" ng-model="vm.teaEvaluationInfo.humidity" type="number" step="any" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="smellRate">Smell Rate
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="smellRate" id="smellRate" ng-model="vm.teaEvaluationInfo.smellRate" type="number" step="any" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="user">User
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="user" id="user" ng-model="vm.teaEvaluationInfo.user" ng-options="users for users in vm.usersList track by users.id"></select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="tasteRate">Taste Rate
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="tasteRate" id="tasteRate" ng-model="vm.teaEvaluationInfo.tasteRate" type="number" step="any" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="teaBasicInfo">Tea Basic Info
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="teaBasicInfo" id="teaBasicInfo" ng-model="vm.teaEvaluationInfo.teaBasicInfo" ng-options="teaBasicInfo for teaBasicInfo in vm.teaBasicInfoList track by teaBasicInfo.id"></select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="potentialRate">Potential Rate
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="potentialRate" id="potentialRate" ng-model="vm.teaEvaluationInfo.potentialRate" type="number" step="any" />
+  </div>
+</fieldset>

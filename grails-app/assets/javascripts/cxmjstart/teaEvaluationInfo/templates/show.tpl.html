@@ -1,0 +1,90 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="teaEvaluationInfo.list" class="list">TeaEvaluationInfo List</a></li>
+        <li><a class="create" ui-sref="teaEvaluationInfo.create" class="create">New TeaEvaluationInfo</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show TeaEvaluationInfo</h1>
+    <ol class="property-list teaEvaluationInfo">
+  <li class="fieldcontain">
+    <span id="feelingRate-label" class="property-label">Feeling Rate</span>
+    <div class="property-value" aria-labelledby="feelingRate-label">
+      <span>{{vm.teaEvaluationInfo.feelingRate}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="colorRate-label" class="property-label">Color Rate</span>
+    <div class="property-value" aria-labelledby="colorRate-label">
+      <span>{{vm.teaEvaluationInfo.colorRate}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="comments-label" class="property-label">Comments</span>
+    <div class="property-value" aria-labelledby="comments-label">
+      <span>{{vm.teaEvaluationInfo.comments}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="evaluationDate-label" class="property-label">Evaluation Date</span>
+    <div class="property-value" aria-labelledby="evaluationDate-label">
+      <span>{{vm.teaEvaluationInfo.evaluationDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="overallRate-label" class="property-label">Overall Rate</span>
+    <div class="property-value" aria-labelledby="overallRate-label">
+      <span>{{vm.teaEvaluationInfo.overallRate}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="temperature-label" class="property-label">Temperature</span>
+    <div class="property-value" aria-labelledby="temperature-label">
+      <span>{{vm.teaEvaluationInfo.temperature}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="humidity-label" class="property-label">Humidity</span>
+    <div class="property-value" aria-labelledby="humidity-label">
+      <span>{{vm.teaEvaluationInfo.humidity}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="smellRate-label" class="property-label">Smell Rate</span>
+    <div class="property-value" aria-labelledby="smellRate-label">
+      <span>{{vm.teaEvaluationInfo.smellRate}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="user-label" class="property-label">User</span>
+    <div class="property-value" aria-labelledby="user-label">
+      <a ui-sref="users.show({id: vm.teaEvaluationInfo.user.id})">{{vm.teaEvaluationInfo.user.toString()}}</a>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="tasteRate-label" class="property-label">Taste Rate</span>
+    <div class="property-value" aria-labelledby="tasteRate-label">
+      <span>{{vm.teaEvaluationInfo.tasteRate}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="teaBasicInfo-label" class="property-label">Tea Basic Info</span>
+    <div class="property-value" aria-labelledby="teaBasicInfo-label">
+      <a ui-sref="teaBasicInfo.show({id: vm.teaEvaluationInfo.teaBasicInfo.id})">{{vm.teaEvaluationInfo.teaBasicInfo.toString()}}</a>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="potentialRate-label" class="property-label">Potential Rate</span>
+    <div class="property-value" aria-labelledby="potentialRate-label">
+      <span>{{vm.teaEvaluationInfo.potentialRate}}</span>
+    </div>
+  </li>
+</ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="teaEvaluationInfo.edit({id: vm.teaEvaluationInfo.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>

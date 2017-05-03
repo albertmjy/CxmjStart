@@ -1,0 +1,50 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="teaEvaluationInfo.create" class="create">New TeaEvaluationInfo</a></li>
+    </ul>
+</div>
+<div id="list-teaEvaluationInfo" class="content scaffold-list" role="main">
+    <h1>TeaEvaluationInfo List</h1>
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Feeling Rate</th>
+      <th>Color Rate</th>
+      <th>Comments</th>
+      <th>Evaluation Date</th>
+      <th>Overall Rate</th>
+      <th>Temperature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="teaEvaluationInfo in vm.teaEvaluationInfoList">
+      <td>
+        <a ui-sref="teaEvaluationInfo.show({id: teaEvaluationInfo.id})">{{teaEvaluationInfo.id}}</a>
+      </td>
+      <td>
+        <span>{{teaEvaluationInfo.feelingRate}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationInfo.colorRate}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationInfo.comments}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationInfo.evaluationDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationInfo.overallRate}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationInfo.temperature}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>
