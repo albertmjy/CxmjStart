@@ -1,0 +1,157 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="teaBasicInfo.create" class="create">New TeaBasicInfo</a></li>
+    </ul>
+</div>
+<div id="list-teaBasicInfo" class="content scaffold-list" role="main">
+    <h5>TeaBasicInfo List</h5>
+
+  <!--should slide in from right side-->
+  <div class="glass-pane" ng-show="vm.searchService.show">
+
+    <div class="glass"></div>
+
+    <div class="content-pane">
+      <div>
+        <button type="button" ng-click="vm.searchService.hideFilter()" >Go Back >></button>
+      </div>
+      <form class="form">
+        <div class="">
+          <label class="control-label">Tea Name</label>
+          <input type="text" class="input-sm" ng-model="vm.searchService.dataModle.name" placeholder="" />
+        </div>
+
+        <div class="">
+          <label class="control-label">Brand</label>
+          <input type="text" class="input-sm" ng-model="vm.searchService.dataModle.brand" placeholder="" />
+        </div>
+
+        <div class="">
+          <label class="control-label">Year</label>
+          <input type="text" class="input-sm" ng-model="vm.searchService.dataModle.year" placeholder="" />
+        </div>
+
+        <div class="">
+          <label class="control-label">Region</label>
+          <input type="text" class="input-sm" ng-model="vm.searchService.dataModle.region" placeholder="" />
+        </div>
+
+        <div class="">
+          <label class="control-label">County</label>
+          <input type="text" class="input-sm" ng-model="vm.searchService.dataModle.county" placeholder="" />
+        </div>
+
+        <div class="">
+          <label class="control-label">Township</label>
+          <input type="text" class="input-sm" ng-model="vm.searchService.dataModle.township" placeholder="" />
+        </div>
+
+        <div class="">
+          <label class="control-label">Committee</label>
+          <input type="text" class="input-sm" ng-model="vm.searchService.dataModle.committee" placeholder="" />
+        </div>
+
+        <div class="">
+          <label class="control-label">Unit</label>
+          <input type="text" class="input-sm" ng-model="vm.searchService.dataModle.unit" placeholder="" />
+        </div>
+
+        <div class="form-group">
+          <button type="reset" class="col-xs-6 btn btn-default" ng-click="vm.searchService.reset()" >Reset</button>
+          <button class="col-xs-6 btn btn-primary" ng-click="vm.submitSearch()" >Search</button>
+          <!--<a ui-sref="index" ng-click="vm.searchService.hideFilter()" class="create">Search</a>-->
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="mob-list">
+
+    <div class="mob-search">
+      <!--<input type="search" class="input-sm" ng-model="vm.searchModel.name" placeholder="" />-->
+      <button type="button" ng-click="vm.searchService.showFilter()">Filter</button>
+    </div>
+
+    <ul ng-if="!vm.widthOver480" class="list-group">
+      <li class="list-group-item" ng-repeat="teaBasicInfo in vm.teaBasicInfoList">
+        <a ui-sref="teaBasicInfo.show({id:teaBasicInfo.id})">{{teaBasicInfo.name}}</a>
+        <div>
+          <span>{{teaBasicInfo.brand}}</span>
+          <span>{{teaBasicInfo.year | date:'yyyy'}}</span>
+          <span>{{teaBasicInfo.category}}</span>
+          <span>{{teaBasicInfo.region}}</span>
+          <span>{{teaBasicInfo.county}}</span>
+          <span>{{teaBasicInfo.township}}</span>
+          <span>{{teaBasicInfo.village}}</span>
+          <span>{{teaBasicInfo.committee}}</span>
+          <span>{{teaBasicInfo.unitLabel}}</span>
+        </div>
+      </li>
+
+    </ul>
+
+
+  </div>
+
+
+
+    <table ng-if="vm.widthOver480">
+  <thead>
+    <tr>
+      <!--<th>Id</th>-->
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Year</th>
+      <th>Category</th>
+      <th>Region</th>
+      <th>County</th>
+      <th>township</th>
+      <th>village</th>
+      <th>committee</th>
+      <th>unitLabel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="teaBasicInfo in vm.teaBasicInfoList">
+      <!--<td>-->
+        <!--<a ui-sref="teaBasicInfo.show({id: teaBasicInfo.id})">{{teaBasicInfo.id}}</a>-->
+      <!--</td>-->
+      <td>
+        <span><a ui-sref="teaBasicInfo.show({id: teaBasicInfo.id})">{{teaBasicInfo.name}}</a></span>
+      </td>
+      <td>
+        <span>{{teaBasicInfo.brand}}</span>
+      </td>
+      <td>
+        <!--<span>{{teaBasicInfo.year | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>-->
+        <span>{{teaBasicInfo.year | date:'yyyy'}}</span>
+      </td>
+      <td>
+        <span>{{teaBasicInfo.category}}</span>
+      </td>
+      <td>
+        <span>{{teaBasicInfo.region}}</span>
+      </td>
+      <td>
+        <span>{{teaBasicInfo.county}}</span>
+      </td>
+      <td>
+        <span>{{teaBasicInfo.township}}</span>
+      </td>
+      <td>
+        <span>{{teaBasicInfo.village}}</span>
+      </td>
+      <td>
+        <span>{{teaBasicInfo.committee}}</span>
+      </td>
+      <td>
+        <span>{{teaBasicInfo.unitLabel}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

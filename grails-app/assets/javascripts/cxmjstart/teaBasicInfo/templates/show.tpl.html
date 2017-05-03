@@ -1,0 +1,167 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="teaBasicInfo.list" class="list">TeaBasicInfo List</a></li>
+        <li><a class="create" ui-sref="teaBasicInfo.create" class="create">New TeaBasicInfo</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show TeaBasicInfo</h1>
+
+  <div ng-if="!vm.widthOver480" class="panel">
+    <ul class="list-group">
+      <li>
+        <div class="col-xs-4">
+          <label class="control-label">Name</label>
+        </div>
+        <div class="col-xs-8">
+          <span>{{vm.teaBasicInfo.name}}</span>
+        </div>
+      </li>
+      <li>
+        <div class="col-xs-4">
+          <label class="control-label">Brand</label>
+        </div>
+        <div class="col-xs-8">
+          <span>{{vm.teaBasicInfo.brand}}</span>
+        </div>
+      </li>
+      <li>
+        <div class="col-xs-4">
+          <label class="control-label">Year</label>
+        </div>
+        <div class="col-xs-8">
+          <span>{{vm.teaBasicInfo.year}}</span>
+        </div>
+      </li>
+      <li>
+        <div class="col-xs-4">
+          <label class="control-label">Category</label>
+        </div>
+        <div class="col-xs-8">
+          <span>{{vm.teaBasicInfo.category}}</span>
+        </div>
+      </li>
+      <li>
+        <div class="col-xs-4">
+          <label class="control-label">Region</label>
+        </div>
+        <div class="col-xs-8">
+          <span>{{vm.teaBasicInfo.region}}</span>
+        </div>
+      </li>
+      <li>
+        <div class="col-xs-4">
+          <label class="control-label">County</label>
+        </div>
+        <div class="col-xs-8">
+          <span>{{vm.teaBasicInfo.county}}</span>
+        </div>
+      </li>
+      <li>
+        <div class="col-xs-4">
+          <label class="control-label">Township</label>
+        </div>
+        <div class="col-xs-8">
+          <span>{{vm.teaBasicInfo.township}}</span>
+        </div>
+      </li>
+      <li>
+        <div class="col-xs-4">
+          <label class="control-label">Committee</label>
+        </div>
+        <div class="col-xs-8">
+          <span>{{vm.teaBasicInfo.committee}}</span>
+        </div>
+      </li>
+      <li>
+        <div class="col-xs-4">
+          <label class="control-label">Unit Label</label>
+        </div>
+        <div class="col-xs-8">
+          <span>{{vm.teaBasicInfo.unitLabel}}</span>
+        </div>
+      </li>
+      <li>
+        <div class="col-xs-4">
+          <label class="control-label">Village</label>
+        </div>
+        <div class="col-xs-8">
+          <span>{{vm.teaBasicInfo.village}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+    <ol ng-if="vm.widthOver480" class="property-list teaBasicInfo">
+  <li class="fieldcontain">
+    <span id="name-label" class="property-label">Name</span>
+    <div class="property-value" aria-labelledby="name-label">
+      <span>{{vm.teaBasicInfo.name}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="brand-label" class="property-label">Brand</span>
+    <div class="property-value" aria-labelledby="brand-label">
+      <span>{{vm.teaBasicInfo.brand}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="year-label" class="property-label">Year</span>
+    <div class="property-value" aria-labelledby="year-label">
+      <span>{{vm.teaBasicInfo.year | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="category-label" class="property-label">Category</span>
+    <div class="property-value" aria-labelledby="category-label">
+      <span>{{vm.teaBasicInfo.category}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="region-label" class="property-label">Region</span>
+    <div class="property-value" aria-labelledby="region-label">
+      <span>{{vm.teaBasicInfo.region}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="county-label" class="property-label">County</span>
+    <div class="property-value" aria-labelledby="county-label">
+      <span>{{vm.teaBasicInfo.county}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="township-label" class="property-label">Township</span>
+    <div class="property-value" aria-labelledby="township-label">
+      <span>{{vm.teaBasicInfo.township}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="village-label" class="property-label">Village</span>
+    <div class="property-value" aria-labelledby="village-label">
+      <span>{{vm.teaBasicInfo.village}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="committee-label" class="property-label">Committee</span>
+    <div class="property-value" aria-labelledby="committee-label">
+      <span>{{vm.teaBasicInfo.committee}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="unitLabel-label" class="property-label">Unit Label</span>
+    <div class="property-value" aria-labelledby="unitLabel-label">
+      <a ui-sref="unitLabel.show({id: vm.teaBasicInfo.unitLabel.id})">{{vm.teaBasicInfo.unitLabel.toString()}}</a>
+    </div>
+  </li>
+</ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="teaBasicInfo.edit({id: vm.teaBasicInfo.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,52 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="name">Name
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="name" id="name" ng-model="vm.teaBasicInfo.name" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="brand">Brand
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="brand" id="brand" ng-model="vm.teaBasicInfo.brand" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="year">Year
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="year" id="year" ng-model="vm.teaBasicInfo.year" type="date" placeholder="YYYY-MM-DD" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="category">Category
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="category" id="category" ng-model="vm.teaBasicInfo.category" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="region">Region
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="region" id="region" ng-model="vm.teaBasicInfo.region" type="text" />
+  </div>
+  <div class="fieldcontain">
+    <label for="county">County</label>
+    <input name="county" id="county" ng-model="vm.teaBasicInfo.county" type="text" />
+  </div>
+  <div class="fieldcontain">
+    <label for="township">Township</label>
+    <input name="township" id="township" ng-model="vm.teaBasicInfo.township" type="text" />
+  </div>
+  <div class="fieldcontain">
+    <label for="village">Village</label>
+    <input name="village" id="village" ng-model="vm.teaBasicInfo.village" type="text" />
+  </div>
+  <div class="fieldcontain">
+    <label for="committee">Committee</label>
+    <input name="committee" id="committee" ng-model="vm.teaBasicInfo.committee" type="text" />
+  </div>
+  <div class="fieldcontain">
+    <label for="unitLabel">Unit Label</label>
+    <select name="unitLabel" id="unitLabel" ng-model="vm.teaBasicInfo.unitLabel" ng-options="unitLabel for unitLabel in vm.unitLabelList track by unitLabel.id"></select>
+  </div>
+</fieldset>
