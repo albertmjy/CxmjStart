@@ -1,0 +1,46 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="inOrOut">In Or Out
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="inOrOut" id="inOrOut" ng-model="vm.teaInventoryInfo.inOrOut" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="quantity">Quantity
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="quantity" id="quantity" ng-model="vm.teaInventoryInfo.quantity" type="number" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="unitLabel">Unit Label
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="unitLabel" id="unitLabel" ng-model="vm.teaInventoryInfo.unitLabel" ng-options="unitLabel for unitLabel in vm.unitLabelList track by unitLabel.id"></select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="requestDate">Request Date
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="requestDate" id="requestDate" ng-model="vm.teaInventoryInfo.requestDate" type="date" placeholder="YYYY-MM-DD" />
+  </div>
+  <div class="fieldcontain">
+    <label for="effectiveData">Effective Data</label>
+    <input name="effectiveData" id="effectiveData" ng-model="vm.teaInventoryInfo.effectiveData" type="date" placeholder="YYYY-MM-DD" />
+  </div>
+  <div class="fieldcontain">
+    <label for="price">Price</label>
+    <input name="price" id="price" ng-model="vm.teaInventoryInfo.price" type="number" step="any" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="owner">Owner
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="owner" id="owner" ng-model="vm.teaInventoryInfo.owner" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="teaBasicInfo">Tea Basic Info
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="teaBasicInfo" id="teaBasicInfo" ng-model="vm.teaInventoryInfo.teaBasicInfo" ng-options="teaBasicInfo for teaBasicInfo in vm.teaBasicInfoList track by teaBasicInfo.id"></select>
+  </div>
+</fieldset>

@@ -1,0 +1,21 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="teaInventoryInfo.list" class="list">TeaInventoryInfo List</a></li>
+    </ul>
+</div>
+<div id="edit-teaInventoryInfo" class="content scaffold-edit" role="main">
+    <h1>Edit TeaInventoryInfo</h1>
+    <ul class="errors" role="alert" ng-if="vm.errors">
+        <li ng-repeat="error in vm.errors">{{error.message}}</li>
+    </ul>
+
+    <form name="updateTeaInventoryInfo" ng-submit="vm.updateTeaInventoryInfo()">
+        <fieldset class="form">
+            <ng-include src="'/cxmjstart/teaInventoryInfo/form.html'"></ng-include>
+        </fieldset>
+        <fieldset class="buttons">
+            <input type="submit" class="save" value="Update" />
+        </fieldset>
+    </form>
+</div>

@@ -6,6 +6,7 @@
 //= require /cxmjstart/unitLabel/cxmjstart.unitLabel
 //= require /cxmjstart/teaEvaluationInfo/cxmjstart.teaEvaluationInfo
 //= require /cxmjstart/users/cxmjstart.users
+//= require /cxmjstart/teaInventoryInfo/cxmjstart.teaInventoryInfo
 
 angular.module("cxmjstart", [
     "cxmjstart.core",
@@ -13,5 +14,6 @@ angular.module("cxmjstart", [
     "cxmjstart.teaBasicInfo",
     "cxmjstart.unitLabel",
     "cxmjstart.teaEvaluationInfo",
-    "cxmjstart.users"
+    "cxmjstart.users",
+    "cxmjstart.teaInventoryInfo"
 ]);

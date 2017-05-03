@@ -1,0 +1,50 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="teaInventoryInfo.create" class="create">New TeaInventoryInfo</a></li>
+    </ul>
+</div>
+<div id="list-teaInventoryInfo" class="content scaffold-list" role="main">
+    <h1>TeaInventoryInfo List</h1>
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>In Or Out</th>
+      <th>Quantity</th>
+      <th>Unit Label</th>
+      <th>Request Date</th>
+      <th>Effective Data</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="teaInventoryInfo in vm.teaInventoryInfoList">
+      <td>
+        <a ui-sref="teaInventoryInfo.show({id: teaInventoryInfo.id})">{{teaInventoryInfo.id}}</a>
+      </td>
+      <td>
+        <span>{{teaInventoryInfo.inOrOut}}</span>
+      </td>
+      <td>
+        <span>{{teaInventoryInfo.quantity}}</span>
+      </td>
+      <td>
+        <a ui-sref="unitLabel.show({id: teaInventoryInfo.unitLabel.id})">{{teaInventoryInfo.unitLabel.toString()}}</a>
+      </td>
+      <td>
+        <span>{{teaInventoryInfo.requestDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+      </td>
+      <td>
+        <span>{{teaInventoryInfo.effectiveData | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+      </td>
+      <td>
+        <span>{{teaInventoryInfo.price}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>
