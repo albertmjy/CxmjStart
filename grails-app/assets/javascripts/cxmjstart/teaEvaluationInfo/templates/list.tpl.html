@@ -13,9 +13,9 @@
       <th>Feeling Rate</th>
       <th>Color Rate</th>
       <th>Comments</th>
-      <th>Evaluation Date</th>
       <th>Overall Rate</th>
-      <th>Temperature</th>
+      <th>Tea Evaluation Event Info</th>
+      <th>Smell Rate</th>
     </tr>
   </thead>
   <tbody>
@@ -33,13 +33,13 @@
         <span>{{teaEvaluationInfo.comments}}</span>
       </td>
       <td>
-        <span>{{teaEvaluationInfo.evaluationDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
-      </td>
-      <td>
         <span>{{teaEvaluationInfo.overallRate}}</span>
       </td>
       <td>
-        <span>{{teaEvaluationInfo.temperature}}</span>
+        <a ui-sref="teaEvaluationEventInfo.show({id: teaEvaluationInfo.teaEvaluationEventInfo.id})">{{teaEvaluationInfo.teaEvaluationEventInfo.toString()}}</a>
+      </td>
+      <td>
+        <span>{{teaEvaluationInfo.smellRate}}</span>
       </td>
     </tr>
   </tbody>

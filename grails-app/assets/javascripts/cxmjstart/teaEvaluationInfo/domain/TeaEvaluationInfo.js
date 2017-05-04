@@ -10,8 +10,8 @@ function TeaEvaluationInfo($resource, domainListConversion, domainConversion) {
         "teaEva/:id",
         {"id": "@id"},
         {"update": {method: "PUT"},
-         "query": {method: "GET", isArray: true, transformResponse: [angular.fromJson, domainListConversion("Users", "user", "domainConversion"), domainListConversion("TeaBasicInfo", "teaBasicInfo", "domainConversion")]},
-         "get": {method: 'GET', transformResponse: [angular.fromJson, domainConversion("Users", "user"), domainConversion("TeaBasicInfo", "teaBasicInfo")]}}
+         "query": {method: "GET", isArray: true, transformResponse: [angular.fromJson, domainListConversion("TeaEvaluationEventInfo", "teaEvaluationEventInfo", "domainConversion"), domainListConversion("Users", "user", "domainConversion"), domainListConversion("TeaBasicInfo", "teaBasicInfo", "domainConversion")]},
+         "get": {method: 'GET', transformResponse: [angular.fromJson, domainConversion("TeaEvaluationEventInfo", "teaEvaluationEventInfo"), domainConversion("Users", "user"), domainConversion("TeaBasicInfo", "teaBasicInfo")]}}
     );
 
     TeaEvaluationInfo.list = TeaEvaluationInfo.query;

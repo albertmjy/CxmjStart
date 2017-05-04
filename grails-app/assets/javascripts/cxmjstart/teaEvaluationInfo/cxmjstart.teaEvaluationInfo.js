@@ -3,6 +3,7 @@
 //= require /angular/angular-ui-router
 //= require /angular/angular-resource
 //= require /cxmjstart/core/cxmjstart.core
+//= require /cxmjstart/teaEvaluationEventInfo/cxmjstart.teaEvaluationEventInfo
 //= require /cxmjstart/users/cxmjstart.users
 //= require /cxmjstart/teaBasicInfo/cxmjstart.teaBasicInfo
 //= require_self
@@ -16,6 +17,7 @@ angular.module("cxmjstart.teaEvaluationInfo", [
     "ui.router",
     "ngResource",
     "cxmjstart.core",
+    "cxmjstart.teaEvaluationEventInfo",
     "cxmjstart.users",
     "cxmjstart.teaBasicInfo"
 ]).config(config);

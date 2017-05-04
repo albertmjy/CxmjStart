@@ -4,9 +4,10 @@ angular
     .module("cxmjstart.teaEvaluationInfo")
     .controller("TeaEvaluationInfoEditController", TeaEvaluationInfoEditController);
 
-function TeaEvaluationInfoEditController(TeaEvaluationInfo, $stateParams, $state, Users, TeaBasicInfo) {
+function TeaEvaluationInfoEditController(TeaEvaluationInfo, $stateParams, $state, TeaEvaluationEventInfo, Users, TeaBasicInfo) {
     var vm = this;
 
+    vm.teaEvaluationEventInfoList = TeaEvaluationEventInfo.list();
     vm.usersList = Users.list();
     vm.teaBasicInfoList = TeaBasicInfo.list();
 

@@ -13,6 +13,8 @@ class BootStrap {
 
         new UnitLabel(unit: "pack", weightInGram: 357).save()
         new UnitLabel(unit: "gram", weightInGram: 1).save()
+
+        new TeaEvaluationInfo()
     }
     def destroy = {
     }

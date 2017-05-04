@@ -27,27 +27,15 @@
     </div>
   </li>
   <li class="fieldcontain">
-    <span id="evaluationDate-label" class="property-label">Evaluation Date</span>
-    <div class="property-value" aria-labelledby="evaluationDate-label">
-      <span>{{vm.teaEvaluationInfo.evaluationDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
-    </div>
-  </li>
-  <li class="fieldcontain">
     <span id="overallRate-label" class="property-label">Overall Rate</span>
     <div class="property-value" aria-labelledby="overallRate-label">
       <span>{{vm.teaEvaluationInfo.overallRate}}</span>
     </div>
   </li>
   <li class="fieldcontain">
-    <span id="temperature-label" class="property-label">Temperature</span>
-    <div class="property-value" aria-labelledby="temperature-label">
-      <span>{{vm.teaEvaluationInfo.temperature}}</span>
-    </div>
-  </li>
-  <li class="fieldcontain">
-    <span id="humidity-label" class="property-label">Humidity</span>
-    <div class="property-value" aria-labelledby="humidity-label">
-      <span>{{vm.teaEvaluationInfo.humidity}}</span>
+    <span id="teaEvaluationEventInfo-label" class="property-label">Tea Evaluation Event Info</span>
+    <div class="property-value" aria-labelledby="teaEvaluationEventInfo-label">
+      <a ui-sref="teaEvaluationEventInfo.show({id: vm.teaEvaluationInfo.teaEvaluationEventInfo.id})">{{vm.teaEvaluationInfo.teaEvaluationEventInfo.toString()}}</a>
     </div>
   </li>
   <li class="fieldcontain">

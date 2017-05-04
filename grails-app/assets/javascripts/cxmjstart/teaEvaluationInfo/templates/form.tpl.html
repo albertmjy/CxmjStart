@@ -18,28 +18,16 @@
     <input required="" name="comments" id="comments" ng-model="vm.teaEvaluationInfo.comments" type="text" />
   </div>
   <div class="fieldcontain required">
-    <label for="evaluationDate">Evaluation Date
-      <span class="required-indicator">*</span>
-    </label>
-    <input required="" name="evaluationDate" id="evaluationDate" ng-model="vm.teaEvaluationInfo.evaluationDate" type="date" placeholder="YYYY-MM-DD" />
-  </div>
-  <div class="fieldcontain required">
     <label for="overallRate">Overall Rate
       <span class="required-indicator">*</span>
     </label>
     <input required="" name="overallRate" id="overallRate" ng-model="vm.teaEvaluationInfo.overallRate" type="number" step="any" />
   </div>
   <div class="fieldcontain required">
-    <label for="temperature">Temperature
+    <label for="teaEvaluationEventInfo">Tea Evaluation Event Info
       <span class="required-indicator">*</span>
     </label>
-    <input required="" name="temperature" id="temperature" ng-model="vm.teaEvaluationInfo.temperature" type="number" step="any" />
-  </div>
-  <div class="fieldcontain required">
-    <label for="humidity">Humidity
-      <span class="required-indicator">*</span>
-    </label>
-    <input required="" name="humidity" id="humidity" ng-model="vm.teaEvaluationInfo.humidity" type="number" step="any" />
+    <select required="" name="teaEvaluationEventInfo" id="teaEvaluationEventInfo" ng-model="vm.teaEvaluationInfo.teaEvaluationEventInfo" ng-options="teaEvaluationEventInfo for teaEvaluationEventInfo in vm.teaEvaluationEventInfoList track by teaEvaluationEventInfo.id"></select>
   </div>
   <div class="fieldcontain required">
     <label for="smellRate">Smell Rate

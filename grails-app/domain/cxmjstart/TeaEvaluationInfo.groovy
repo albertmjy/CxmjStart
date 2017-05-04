@@ -7,10 +7,6 @@ class TeaEvaluationInfo {
 
     TeaBasicInfo teaBasicInfo
 
-    Date evaluationDate
-    Double temperature
-    Double humidity
-
     Double colorRate
     Double smellRate
     Double tasteRate
@@ -20,7 +16,9 @@ class TeaEvaluationInfo {
     String comments
 
     Users user
+    TeaEvaluationEventInfo teaEvaluationEventInfo
 
     static constraints = {
     }
+
 }
