@@ -19,8 +19,23 @@ class TeaBasicInfoController extends RestfulController {
      * @param max The maximum
      * @return A list of resources
      */
-//    @Override
-//    def index(Integer max) {
+    @Override
+    def index(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        print "${resourceName}Count" + countResources()
+
+        println params
+
+        response.addIntHeader("total-count", countResources())  // works!
+        response.setHeader("Link", "<https://api.github.com/user/repos?page=3&per_page=100>; rel=\"next\", <https://api.github.com/user/repos?page=50&per_page=100>; rel=\"last\"")
+
+        def list = listAllResources(params)
+
+
+
+        respond list, model: ["test": 123]
+
+
 //        if (params.search){
 //            redirect(action:"search", params: this.params)
 //
@@ -28,8 +43,15 @@ class TeaBasicInfoController extends RestfulController {
 //        } else {
 //            super.index(max)
 //        }
+
+
+//        params.max = Math.min(max ?: 10, 100)
+//        def list = TeaBasicInfo.list(params)
 //
-//    }
+//        JSON.use('deep'){
+//            render list as JSON
+//        }
+    }
 
     def search(Integer max){
         println "I 'm in search"

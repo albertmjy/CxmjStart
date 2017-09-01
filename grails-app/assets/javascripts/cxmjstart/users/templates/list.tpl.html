@@ -1,0 +1,50 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="users.create" class="create">New Users</a></li>
+    </ul>
+</div>
+<div id="list-users" class="content scaffold-list" role="main">
+    <h1>Users List</h1>
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Tea Age</th>
+      <th>Role</th>
+      <th>Gender</th>
+      <th>Level</th>
+      <th>Name</th>
+      <th>Mobile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="users in vm.usersList">
+      <td>
+        <a ui-sref="users.show({id: users.id})">{{users.id}}</a>
+      </td>
+      <td>
+        <span>{{users.teaAge}}</span>
+      </td>
+      <td>
+        <span>{{users.role}}</span>
+      </td>
+      <td>
+        <span>{{users.gender}}</span>
+      </td>
+      <td>
+        <span>{{users.level}}</span>
+      </td>
+      <td>
+        <span>{{users.name}}</span>
+      </td>
+      <td>
+        <span>{{users.mobile}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

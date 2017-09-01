@@ -1,0 +1,38 @@
+<fieldset class="form">
+  <div class="fieldcontain">
+    <label for="hostName">Host Name</label>
+    <input name="hostName" id="hostName" ng-model="vm.teaEvaluationEventInfo.hostName" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="evaluationDate">Evaluation Date
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="evaluationDate" id="evaluationDate" ng-model="vm.teaEvaluationEventInfo.evaluationDate" type="date" placeholder="YYYY-MM-DD" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="intro">Intro
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="intro" id="intro" ng-model="vm.teaEvaluationEventInfo.intro" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="temperature">Temperature
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="temperature" id="temperature" ng-model="vm.teaEvaluationEventInfo.temperature" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="humidity">Humidity
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="humidity" id="humidity" ng-model="vm.teaEvaluationEventInfo.humidity" type="text" />
+  </div>
+  <div class="fieldcontain">
+    <label for="users">Users</label>
+    <select name="users" id="users" ng-model="vm.teaEvaluationEventInfo.users" ng-options="users for users in vm.usersList track by users.id" multiple=""></select>
+  </div>
+  <div class="fieldcontain">
+    <label for="teaBasicInfo">Tea Basic Info</label>
+    <select name="teaBasicInfo" id="teaBasicInfo" ng-model="vm.teaEvaluationEventInfo.teaBasicInfo" ng-options="teaBasicInfo for teaBasicInfo in vm.teaBasicInfoList track by teaBasicInfo.id" multiple=""></select>
+  </div>
+</fieldset>

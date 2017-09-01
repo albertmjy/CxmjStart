@@ -7,7 +7,7 @@ class TeaBasicInfo {
 
     String name
     String brand
-    Date year
+    String year
 //    Double weight
 //    String unit
 
@@ -19,12 +19,16 @@ class TeaBasicInfo {
     String committee
     UnitLabel unitLabel  // don't use this right now, keep in safe
 
+    static mapping = {
+//        id generator:'assigned', name:'name'
+    }
+
     static constraints = {
         name nullable: false, unique: true
         brand nullable: false
         year nullable: false
         category nullable: false
-        region nullable: false
+        region nullable: true
         county nullable: true
         township nullable: true
         village nullable: true

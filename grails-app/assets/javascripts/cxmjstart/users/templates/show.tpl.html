@@ -1,0 +1,54 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="users.list" class="list">Users List</a></li>
+        <li><a class="create" ui-sref="users.create" class="create">New Users</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show Users</h1>
+    <ol class="property-list users">
+  <li class="fieldcontain">
+    <span id="teaAge-label" class="property-label">Tea Age</span>
+    <div class="property-value" aria-labelledby="teaAge-label">
+      <span>{{vm.users.teaAge}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="role-label" class="property-label">Role</span>
+    <div class="property-value" aria-labelledby="role-label">
+      <span>{{vm.users.role}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="gender-label" class="property-label">Gender</span>
+    <div class="property-value" aria-labelledby="gender-label">
+      <span>{{vm.users.gender}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="level-label" class="property-label">Level</span>
+    <div class="property-value" aria-labelledby="level-label">
+      <span>{{vm.users.level}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="name-label" class="property-label">Name</span>
+    <div class="property-value" aria-labelledby="name-label">
+      <span>{{vm.users.name}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="mobile-label" class="property-label">Mobile</span>
+    <div class="property-value" aria-labelledby="mobile-label">
+      <span>{{vm.users.mobile}}</span>
+    </div>
+  </li>
+</ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="users.edit({id: vm.users.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>

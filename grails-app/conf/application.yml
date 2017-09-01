@@ -74,12 +74,21 @@ dataSource:
     driverClassName: org.h2.Driver
     username: sa
     password:
+    # + added by albert
+#    driverClassName: com.mysql.jdbc.Driver
+#    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#    username: hdm134137550 #mysql
+#    password: 56474587
 
 environments:
     development:
         dataSource:
             dbCreate: create-drop
             url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            # + added by albert
+#            dbCreate: create-drop #update
+#            url: "jdbc:mysql://106.14.26.51:3306/cxmj?useUnicode=yes&characterEncoding=UTF-8"
+#            url: "jdbc:mysql://121.199.65.22:3306/hdm134137550_db?"
     test:
         dataSource:
             dbCreate: update

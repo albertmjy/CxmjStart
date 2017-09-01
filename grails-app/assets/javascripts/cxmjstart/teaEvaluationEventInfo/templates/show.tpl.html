@@ -1,0 +1,68 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="teaEvaluationEventInfo.list" class="list">TeaEvaluationEventInfo List</a></li>
+        <li><a class="create" ui-sref="teaEvaluationEventInfo.create" class="create">New TeaEvaluationEventInfo</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show TeaEvaluationEventInfo</h1>
+    <ol class="property-list teaEvaluationEventInfo">
+  <li class="fieldcontain">
+    <span id="hostName-label" class="property-label">Host Name</span>
+    <div class="property-value" aria-labelledby="hostName-label">
+      <span>{{vm.teaEvaluationEventInfo.hostName}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="evaluationDate-label" class="property-label">Evaluation Date</span>
+    <div class="property-value" aria-labelledby="evaluationDate-label">
+      <span>{{vm.teaEvaluationEventInfo.evaluationDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="intro-label" class="property-label">Intro</span>
+    <div class="property-value" aria-labelledby="intro-label">
+      <span>{{vm.teaEvaluationEventInfo.intro}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="temperature-label" class="property-label">Temperature</span>
+    <div class="property-value" aria-labelledby="temperature-label">
+      <span>{{vm.teaEvaluationEventInfo.temperature}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="humidity-label" class="property-label">Humidity</span>
+    <div class="property-value" aria-labelledby="humidity-label">
+      <span>{{vm.teaEvaluationEventInfo.humidity}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="users-label" class="property-label">Users</span>
+    <div class="property-value" aria-labelledby="users-label">
+      <ul>
+        <li ng-repeat="users in vm.teaEvaluationEventInfo.users">
+          <a ui-sref="users.show({id: users.id})">{{users.toString()}}</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="teaBasicInfo-label" class="property-label">Tea Basic Info</span>
+    <div class="property-value" aria-labelledby="teaBasicInfo-label">
+      <ul>
+        <li ng-repeat="teaBasicInfo in vm.teaEvaluationEventInfo.teaBasicInfo">
+          <a ui-sref="teaBasicInfo.show({id: teaBasicInfo.id})">{{teaBasicInfo.toString()}}</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="teaEvaluationEventInfo.edit({id: vm.teaEvaluationEventInfo.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>

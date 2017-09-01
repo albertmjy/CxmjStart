@@ -6,6 +6,41 @@
 </div>
 <div id="list-teaEvaluationInfo" class="content scaffold-list" role="main">
     <h1>TeaEvaluationInfo List</h1>
+
+  <div class="mob-list">
+
+    <div class="mob-search">
+      <button type="button" ng-click="vm.searchService.showFilter()">Filter</button>
+    </div>
+
+    <ul ng-if="!vm.widthOver480" class="list-group">
+      <li class="list-group-item" ng-repeat="teaEvaluationInfo in vm.teaEvaluationInfoList">
+        <a ui-sref="teaEvaluationInfo.show({id: teaEvaluationInfo.id})">{{teaEvaluationInfo.colorRate}}</a>
+        <div>
+          <!--{{teaEvaluationInfo.teaEvaluationEventInfo.gettDate()}}-->
+          <!--{{teaEvaluationInfo.teaEvaluationEventInfo}}-->
+          <span>{{teaEvaluationInfo.colorRate}}</span>
+          <!--<span>{{teaEvaluationInfo.year | date:'yyyy'}}</span>-->
+          <span>{{teaEvaluationInfo.smellRate}}</span>
+          <span>{{teaEvaluationInfo.tasteRate}}</span>
+          <span>{{teaEvaluationInfo.feelingRate}}</span>
+          <span>{{teaEvaluationInfo.potentialRate}}</span>
+          <span>{{teaEvaluationInfo.overallRate}}</span>
+          <span>{{teaEvaluationInfo.comments}}</span>
+
+        </div>
+      </li>
+    </ul>
+
+    <ul>
+      <li ng-repeat="teaEvaluationEventInfo in vm.teaEvaluationEventInfoList">
+        <span>{{teaEvaluationEventInfo.temperature}}</span>
+      </li>
+    </ul>
+
+  </div>
+
+
     <table>
   <thead>
     <tr>

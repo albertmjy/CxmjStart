@@ -3,6 +3,59 @@
 */
 
 
+
+/*
+    Global
+*/
+
+html, body{
+    height:initial; /* fix the documentElement/body.scrollTop = 0, window.pageYOffset, window.scrollTop issue */
+    max-height:100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*
+index.gsp
+*/
+.view-box{
+    position: relative;
+    /*height:100%;*/
+    padding-top: 70px;
+}
+
+/*
+  index
+*/
+.navbar-default{
+    background-color: #8BC34A; /*#ab6145;*/
+    box-shadow: 0 0 6px 5px #fff;
+}
+.app-panel{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+
+.app-panel .app-box{
+    margin: 8px;
+    text-align: center;
+}
+
+.app-panel .icon{
+    width:80px;
+    height:80px;
+
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 12px 2px #d24638;
+    -moz-box-shadow: 1px 1px 12px 2px #d24638;
+    box-shadow: 1px 1px 12px 2px #d24638;
+}
+
 /*
   template: teaBasicInfo.list
 */

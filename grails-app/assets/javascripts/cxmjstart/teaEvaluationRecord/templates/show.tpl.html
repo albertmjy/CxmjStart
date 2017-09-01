@@ -1,0 +1,78 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="teaEvaluationRecord.list" class="list">TeaEvaluationRecord List</a></li>
+        <li><a class="create" ui-sref="teaEvaluationRecord.create" class="create">New TeaEvaluationRecord</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show TeaEvaluationRecord</h1>
+    <ol class="property-list teaEvaluationRecord">
+  <li class="fieldcontain">
+    <span id="user-label" class="property-label">User</span>
+    <div class="property-value" aria-labelledby="user-label">
+      <span>{{vm.teaEvaluationRecord.user}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="date-label" class="property-label">Date</span>
+    <div class="property-value" aria-labelledby="date-label">
+      <span>{{vm.teaEvaluationRecord.date}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="tea-label" class="property-label">Tea</span>
+    <div class="property-value" aria-labelledby="tea-label">
+      <span>{{vm.teaEvaluationRecord.tea}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="feelingRate-label" class="property-label">Feeling Rate</span>
+    <div class="property-value" aria-labelledby="feelingRate-label">
+      <span>{{vm.teaEvaluationRecord.feelingRate}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="colorRate-label" class="property-label">Color Rate</span>
+    <div class="property-value" aria-labelledby="colorRate-label">
+      <span>{{vm.teaEvaluationRecord.colorRate}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="comments-label" class="property-label">Comments</span>
+    <div class="property-value" aria-labelledby="comments-label">
+      <span>{{vm.teaEvaluationRecord.comments}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="overallRate-label" class="property-label">Overall Rate</span>
+    <div class="property-value" aria-labelledby="overallRate-label">
+      <span>{{vm.teaEvaluationRecord.overallRate}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="smellRate-label" class="property-label">Smell Rate</span>
+    <div class="property-value" aria-labelledby="smellRate-label">
+      <span>{{vm.teaEvaluationRecord.smellRate}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="tasteRate-label" class="property-label">Taste Rate</span>
+    <div class="property-value" aria-labelledby="tasteRate-label">
+      <span>{{vm.teaEvaluationRecord.tasteRate}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="potentialRate-label" class="property-label">Potential Rate</span>
+    <div class="property-value" aria-labelledby="potentialRate-label">
+      <span>{{vm.teaEvaluationRecord.potentialRate}}</span>
+    </div>
+  </li>
+</ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="teaEvaluationRecord.edit({id: vm.teaEvaluationRecord.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>

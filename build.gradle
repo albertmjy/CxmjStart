@@ -3,6 +3,7 @@ buildscript {
         mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
     }
+    ext['tomcat.version'] = '7.0.59'
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "gradle.plugin.com.craigburke.gradle:karma-gradle:1.4.3"
@@ -48,6 +49,7 @@ dependencies {
     compile "org.grails:grails-core"
     compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "org.springframework.boot:spring-boot-starter-tomcat"
+//    provided "org.springframework.boot:spring-boot-starter-tomcat"
     compile "org.grails:grails-plugin-url-mappings"
     compile "org.grails:grails-plugin-rest"
     compile "org.grails:grails-plugin-codecs"
@@ -70,6 +72,8 @@ dependencies {
     profile "org.grails.profiles:angular"
     runtime "com.h2database:h2"
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.11.6"
+    runtime 'mysql:mysql-connector-java:5.1.40' // for mysql added by albert
+
     testCompile "org.grails:grails-plugin-testing"
     testCompile "org.grails.plugins:geb"
     testCompile "org.grails:grails-datastore-rest-client"

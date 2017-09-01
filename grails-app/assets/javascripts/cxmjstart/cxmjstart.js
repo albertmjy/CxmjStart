@@ -8,6 +8,7 @@
 //= require /cxmjstart/users/cxmjstart.users
 //= require /cxmjstart/teaInventoryInfo/cxmjstart.teaInventoryInfo
 //= require /cxmjstart/teaEvaluationEventInfo/cxmjstart.teaEvaluationEventInfo
+//= require /cxmjstart/teaEvaluationRecord/cxmjstart.teaEvaluationRecord
 
 angular.module("cxmjstart", [
     "cxmjstart.core",
@@ -17,5 +18,6 @@ angular.module("cxmjstart", [
     "cxmjstart.teaEvaluationInfo",
     "cxmjstart.users",
     "cxmjstart.teaInventoryInfo",
-    "cxmjstart.teaEvaluationEventInfo"
+    "cxmjstart.teaEvaluationEventInfo",
+    "cxmjstart.teaEvaluationRecord"
 ]);

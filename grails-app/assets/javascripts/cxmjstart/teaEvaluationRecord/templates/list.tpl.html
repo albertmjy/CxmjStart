@@ -1,0 +1,91 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="teaEvaluationRecord.create" class="create">New TeaEvaluationRecord</a></li>
+    </ul>
+</div>
+<div id="list-teaEvaluationRecord" class="content scaffold-list" role="main">
+    <h1>TeaEvaluationRecord List</h1>
+
+  <div class="mob-list">
+
+    <div class="mob-search">
+      <button type="button" ng-click="vm.searchService.showFilter()">Filter</button>
+    </div>
+
+    <ul ng-if="true" class="list-group">
+      <li class="list-group-item" ng-repeat="teaEvaluationRecord in vm.teaEvaluationRecordList">
+        <!--<a ui-sref="teaEvaluationRecord.show({id: teaEvaluationRecord.id})">{{teaEvaluationRecord.overallRate}}</a>-->
+        <div ng-if="teaEvaluationRecord.date.valueOf() != vm.teaEvaluationRecordList[$index-1].date.valueOf()">{{teaEvaluationRecord.date | date:"yyyy-MMM-dd"}}</div>
+        <div ng-if="teaEvaluationRecord.tea != vm.teaEvaluationRecordList[$index-1].tea">{{teaEvaluationRecord.tea}}</div>
+        <!--<span >{{teaEvaluationRecord.tea}}</span>-->
+        <!--<span>综合评分：{{teaEvaluationRecord.overallRate}}</span>-->
+        <div>
+          <span>汤色：{{teaEvaluationRecord.colorRate}}</span>
+          <span>香气：{{teaEvaluationRecord.smellRate}}</span>
+          <span>滋味：{{teaEvaluationRecord.tasteRate}}</span>
+          <span>体感：{{teaEvaluationRecord.feelingRate}}</span>
+          <span>潜力：{{teaEvaluationRecord.potentialRate}}</span>
+          <span>（人：{{teaEvaluationRecord.user}}）</span>
+
+          <!--<span>{{teaEvaluationRecord.potentialRate}}</span>-->
+          <!--<span>{{teaEvaluationRecord.overallRate}}</span>-->
+          <!--<span>{{teaEvaluationRecord.comments}}</span>-->
+          <!--<span>{{teaEvaluationRecord.tea}}</span>-->
+          <!--<span>{{teaEvaluationRecord.user}}</span>-->
+          <!--<span>{{teaEvaluationRecord.date}}</span>-->
+
+        </div>
+      </li>
+    </ul>
+
+    <ul>
+      <li ng-repeat="teaEvaluationEventInfo in vm.teaEvaluationEventInfoList">
+        <span>{{teaEvaluationEventInfo.temperature}}</span>
+      </li>
+    </ul>
+
+  </div>
+
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>User</th>
+      <th>Date</th>
+      <th>Tea</th>
+      <th>Feeling Rate</th>
+      <th>Color Rate</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="teaEvaluationRecord in vm.teaEvaluationRecordList">
+      <td>
+        <a ui-sref="teaEvaluationRecord.show({id: teaEvaluationRecord.id})">{{teaEvaluationRecord.id}}</a>
+      </td>
+      <td>
+        <span>{{teaEvaluationRecord.user}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationRecord.date}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationRecord.tea}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationRecord.feelingRate}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationRecord.colorRate}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationRecord.comments}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

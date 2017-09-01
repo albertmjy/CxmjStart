@@ -1,0 +1,86 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="teaEvaluationEventInfo.create" class="create">New TeaEvaluationEventInfo</a></li>
+    </ul>
+</div>
+<div id="list-teaEvaluationEventInfo" class="content scaffold-list" role="main">
+    <h1>TeaEvaluationEventInfo List</h1>
+
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="teaEvaluationEventInfo in vm.teaEvaluationEventInfoList">
+      <a ui-sref="teaEvaluationEventInfo.show({id: teaEvaluationEventInfo.id})">{{teaEvaluationEventInfo.evaluationDate | date: "yyyy-MM-dd"}}</a>
+      <div>
+        <span>{{teaEvaluationEventInfo.colorRate}}</span>
+        <span>{{teaEvaluationEventInfo.smellRate}}</span>
+        <span>{{teaEvaluationEventInfo.tasteRate}}</span>
+        <span>{{teaEvaluationEventInfo.feelingRate}}</span>
+        <span>{{teaEvaluationEventInfo.potentialRate}}</span>
+        <span>{{teaEvaluationEventInfo.overallRate}}</span>
+        <span>{{teaEvaluationEventInfo.comments}}</span>
+
+      </div>
+    </li>
+  </ul>
+
+
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Host Name</th>
+      <th>Evaluation Date</th>
+      <th>Intro</th>
+      <th>Temperature</th>
+      <th>Humidity</th>
+      <th>Users</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="teaEvaluationEventInfo in vm.teaEvaluationEventInfoList">
+      <td>
+        <a ui-sref="teaEvaluationEventInfo.show({id: teaEvaluationEventInfo.id})">{{teaEvaluationEventInfo.id}}</a>
+      </td>
+      <td>
+        <span>{{teaEvaluationEventInfo.hostName}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationEventInfo.evaluationDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationEventInfo.intro}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationEventInfo.temperature}}</span>
+      </td>
+      <td>
+        <span>{{teaEvaluationEventInfo.humidity}}</span>
+      </td>
+      <td>
+        <ul>
+          <li ng-repeat="users in teaEvaluationEventInfo.users">
+            <a ui-sref="users.show({id: users.id})">{{users.toString()}}</a>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li ng-repeat="teaEvaluationInfo in teaEvaluationEventInfo.teaEvaluationInfo">
+            <a ui-sref="teaEvaluationInfo.show({id: teaEvaluationInfo.id})">{{teaEvaluationInfo.toString()}}</a>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li ng-repeat="teaBasicInfo in teaEvaluationEventInfo.teaBasicInfo">
+            <a ui-sref="teaBasicInfo.show({id: teaBasicInfo.id})">{{teaBasicInfo.toString()}}</a>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Welcome to Grails</title>
+    <title>Welcome to Cxmj</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <style type="text/css">
@@ -14,6 +14,8 @@
 
     <asset:stylesheet src="application.css"/>
 
+    %{--<asset:stylesheet src="custom.css"/>--}%
+
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 
     <script type="text/javascript">
@@ -21,9 +23,9 @@
     </script>
 </head>
 
-<body ng-app="cxmjstart" ng-controller="IndexController as indexCtrl">
+<body ng-app="cxmjstart" ng-controller="IndexController as indexCtrl" scroll="vm.reqMoreItems()" >
 
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" ng-click="navExpanded = !navExpanded">
@@ -35,7 +37,8 @@
                 <a class="navbar-brand" href="/#">
                     <i class="fa grails-icon">
                         <asset:image src="grails-cupsonly-logo-white.svg"/>
-                    </i> Grails
+                        %{--<asset:image src="cxmj_logo.jpg"/>--}%
+                    </i> 茶昔茗今
                 </a>
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;" uib-collapse="!navExpanded">
@@ -73,7 +76,9 @@
         </div>
     </div>
 
-    <div ui-view></div>
+    <div class="view-box">
+        <div ui-view></div>
+    </div>
 
     <div class="footer" role="contentinfo"></div>
 

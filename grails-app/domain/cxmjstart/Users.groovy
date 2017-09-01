@@ -10,4 +10,15 @@ class Users {
 
 //    String group  // invalid, don't know why
     String role
+
+    static constraints = {
+
+    }
+
+//    static hasMany = [teaEvaluationEventInfo: TeaEvaluationEventInfo]
+//    static mapping = {
+//        teaEvaluationEventInfo joinTable: [column:"teaEvaluationEventInfo" +
+//                "", key:"ID"]
+//    }
+
 }

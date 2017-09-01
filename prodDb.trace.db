@@ -1,0 +1,6 @@
+2017-06-16 20:12:30 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "UNIT_LABEL" not found; SQL statement:
+insert into unit_label (id, version, unit, weight_in_gram) values (null, ?, ?, ?) [42102-193]
+2017-06-16 20:12:30 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "UNIT_LABEL" not found; SQL statement:
+insert into unit_label (id, version, unit, weight_in_gram) values (null, ?, ?, ?) [42102-193]

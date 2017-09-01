@@ -4,7 +4,7 @@ angular
     .module("cxmjstart.teaBasicInfo")
     .controller("TeaBasicInfoListController", TeaBasicInfoListController);
 
-function TeaBasicInfoListController(TeaBasicInfo, searchService) {
+function TeaBasicInfoListController(TeaBasicInfo, UnitLabel, searchService, listLoaderService) {
     var vm = this;
 
     var max = 10, offset = 0;
@@ -41,6 +41,8 @@ function TeaBasicInfoListController(TeaBasicInfo, searchService) {
     //
     // }
 
+    console.log(listLoaderService)
+    window.onscroll = listLoaderService.bottomToloadItems(max, offset)
 
 
     // vm.searchModel = searchService.dataModle
@@ -54,11 +56,16 @@ function TeaBasicInfoListController(TeaBasicInfo, searchService) {
             vm.teaBasicInfoList = data
         })
     }
+
     // vm.searchService = searchService
     // searchService.output(vm.teaBasicInfoList)
 
     TeaBasicInfo.list({max: max, offset: offset}, function(data) {
-        console.log(data[0])
+        var label = UnitLabel.get(1)
+        console.log(label)
+
+
+        console.log(data)
         vm.teaBasicInfoList = data;
     });
 }
