@@ -61,11 +61,15 @@ function TeaBasicInfoListController(TeaBasicInfo, UnitLabel, searchService, list
     // searchService.output(vm.teaBasicInfoList)
 
     TeaBasicInfo.list({max: max, offset: offset}, function(data) {
-        var label = UnitLabel.get(1)
-        console.log(label)
-
-
-        console.log(data)
         vm.teaBasicInfoList = data;
     });
+
+    UnitLabel.list({max: 10, offset: 0}, function (data) {
+        var dict = []
+        data.forEach(function (curr, i, arr) {
+            dict[curr.id] = curr
+        })
+        listLoaderService.unitLabelListById = vm.unitLabelListById = dict
+    })
+
 }

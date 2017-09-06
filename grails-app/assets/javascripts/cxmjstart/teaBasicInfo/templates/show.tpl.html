@@ -12,7 +12,7 @@
     <ul class="list-group">
       <li>
         <div class="col-xs-4">
-          <label class="control-label">Name</label>
+          <label class="control-label">名称</label>
         </div>
         <div class="col-xs-8">
           <span>{{vm.teaBasicInfo.name}}</span>
@@ -20,7 +20,7 @@
       </li>
       <li>
         <div class="col-xs-4">
-          <label class="control-label">Brand</label>
+          <label class="control-label">品牌</label>
         </div>
         <div class="col-xs-8">
           <span>{{vm.teaBasicInfo.brand}}</span>
@@ -28,7 +28,7 @@
       </li>
       <li>
         <div class="col-xs-4">
-          <label class="control-label">Year</label>
+          <label class="control-label">年份</label>
         </div>
         <div class="col-xs-8">
           <span>{{vm.teaBasicInfo.year}}</span>
@@ -36,7 +36,7 @@
       </li>
       <li>
         <div class="col-xs-4">
-          <label class="control-label">Category</label>
+          <label class="control-label">茶类</label>
         </div>
         <div class="col-xs-8">
           <span>{{vm.teaBasicInfo.category}}</span>
@@ -44,52 +44,54 @@
       </li>
       <li>
         <div class="col-xs-4">
-          <label class="control-label">Region</label>
+          <label class="control-label">规格</label>
         </div>
         <div class="col-xs-8">
-          <span>{{vm.teaBasicInfo.region}}</span>
+          <span>{{vm.unitLabelListById[vm.teaBasicInfo.unitLabel.id].weightInGram}}/{{vm.unitLabelListById[vm.teaBasicInfo.unitLabel.id].unit}}</span>
         </div>
       </li>
-      <li>
-        <div class="col-xs-4">
-          <label class="control-label">County</label>
-        </div>
-        <div class="col-xs-8">
-          <span>{{vm.teaBasicInfo.county}}</span>
-        </div>
-      </li>
-      <li>
-        <div class="col-xs-4">
-          <label class="control-label">Township</label>
-        </div>
-        <div class="col-xs-8">
-          <span>{{vm.teaBasicInfo.township}}</span>
-        </div>
-      </li>
-      <li>
-        <div class="col-xs-4">
-          <label class="control-label">Committee</label>
-        </div>
-        <div class="col-xs-8">
-          <span>{{vm.teaBasicInfo.committee}}</span>
-        </div>
-      </li>
-      <li>
-        <div class="col-xs-4">
-          <label class="control-label">Unit Label</label>
-        </div>
-        <div class="col-xs-8">
-          <span>{{vm.teaBasicInfo.unitLabel.weightInGram}}/{{vm.teaBasicInfo.unitLabel.unit}}</span>
-        </div>
-      </li>
-      <li>
-        <div class="col-xs-4">
-          <label class="control-label">Village</label>
-        </div>
-        <div class="col-xs-8">
-          <span>{{vm.teaBasicInfo.village}}</span>
-        </div>
-      </li>
+      <!--<li>-->
+        <!--<div class="col-xs-4">-->
+          <!--<label class="control-label">Region</label>-->
+        <!--</div>-->
+        <!--<div class="col-xs-8">-->
+          <!--<span>{{vm.teaBasicInfo.region}}</span>-->
+        <!--</div>-->
+      <!--</li>-->
+      <!--<li>-->
+        <!--<div class="col-xs-4">-->
+          <!--<label class="control-label">County</label>-->
+        <!--</div>-->
+        <!--<div class="col-xs-8">-->
+          <!--<span>{{vm.teaBasicInfo.county}}</span>-->
+        <!--</div>-->
+      <!--</li>-->
+      <!--<li>-->
+        <!--<div class="col-xs-4">-->
+          <!--<label class="control-label">Township</label>-->
+        <!--</div>-->
+        <!--<div class="col-xs-8">-->
+          <!--<span>{{vm.teaBasicInfo.township}}</span>-->
+        <!--</div>-->
+      <!--</li>-->
+      <!--<li>-->
+        <!--<div class="col-xs-4">-->
+          <!--<label class="control-label">Committee</label>-->
+        <!--</div>-->
+        <!--<div class="col-xs-8">-->
+          <!--<span>{{vm.teaBasicInfo.committee}}</span>-->
+        <!--</div>-->
+      <!--</li>-->
+      <!--<li>-->
+        <!--<div class="col-xs-4">-->
+          <!--<label class="control-label">Village</label>-->
+        <!--</div>-->
+        <!--<div class="col-xs-8">-->
+          <!--<span>{{vm.teaBasicInfo.village}}</span>-->
+        <!--</div>-->
+      <!--</li>-->
+
+
     </ul>
   </div>
 

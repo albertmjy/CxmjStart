@@ -81,7 +81,7 @@
         <label class="label label-info">{{teaBasicInfo.category}}</label>
 
         <div style="display: flex; justify-content: space-around">
-          <span><label>单位：</label>{{teaBasicInfo.unitLabel.weightInGram}}/{{teaBasicInfo.unitLabel.unit}}</span>
+          <span><label>单位：</label>{{vm.unitLabelListById[teaBasicInfo.unitLabel.id].weightInGram}}/{{vm.unitLabelListById[teaBasicInfo.unitLabel.id].unit}}</span>
           <span><label>地区：</label>{{teaBasicInfo.region}}</span>
         </div>
         <!--<div>单位：{{teaBasicInfo.unitLabel.weightInGram}}/{{teaBasicInfo.unitLabel.unit}}</div>-->

@@ -26,7 +26,6 @@ function listLoaderService($http, TeaBasicInfo) {
     }
     function reqMoreItems() {
         TeaBasicInfo.list({max: _max, offset: _offset}, function (data, getResponseHeaders) {
-            // data.headers
             if (_remain === null){
                 _total = getResponseHeaders("total-count")
                 _remain = _total
@@ -51,16 +50,8 @@ function listLoaderService($http, TeaBasicInfo) {
         bottomToloadItems : function (max, offset) {
             _max = max, _offset = offset
             return bottomToloadItems
-        }
+        },
+        unitLabelListById : null
     };
 
-
-    // return function (max, offset) {
-    //     _max = max
-    //     _offset = offset
-    //
-    //     return {
-    //         bottomToloadItems : bottomToloadItems
-    //     }
-    // }
 }
