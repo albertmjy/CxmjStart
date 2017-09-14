@@ -9,6 +9,7 @@
 //= require /cxmjstart/teaInventoryInfo/cxmjstart.teaInventoryInfo
 //= require /cxmjstart/teaEvaluationEventInfo/cxmjstart.teaEvaluationEventInfo
 //= require /cxmjstart/teaEvaluationRecord/cxmjstart.teaEvaluationRecord
+//= require /cxmjstart/geoInfo/cxmjstart.geoInfo
 
 angular.module("cxmjstart", [
     "cxmjstart.core",
@@ -19,5 +20,6 @@ angular.module("cxmjstart", [
     "cxmjstart.users",
     "cxmjstart.teaInventoryInfo",
     "cxmjstart.teaEvaluationEventInfo",
-    "cxmjstart.teaEvaluationRecord"
+    "cxmjstart.teaEvaluationRecord",
+    // "cxmjstart.geoInfo"
 ]);

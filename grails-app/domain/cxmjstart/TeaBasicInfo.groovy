@@ -13,6 +13,7 @@ class TeaBasicInfo {
 
     String category
     String region
+    String city
     String county
     String township
     String village
@@ -28,7 +29,9 @@ class TeaBasicInfo {
         brand nullable: false
         year nullable: false
         category nullable: false
-        region nullable: true
+
+        region nullable: false
+        city nullable: true
         county nullable: true
         township nullable: true
         village nullable: true
