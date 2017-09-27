@@ -8,9 +8,9 @@
     Global
 */
 
-html, body{
+body{
     height:initial; /* fix the documentElement/body.scrollTop = 0, window.pageYOffset, window.scrollTop issue */
-    max-height:100%;
+    min-height:100%;
 }
 
 a{
@@ -90,5 +90,29 @@ index.gsp
     /*left: 15%;*/
     /*padding-right: 15%;*/
     overflow: scroll;
+    padding-left: 8px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    border-top: solid 1px #CCCCCC;
 
 }
+
+.filter-form{
+    margin: 0;
+}
+.filter-form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.filter-form a{
+    width: 50%;
+    flex: 1;
+}
+.filter-form .item{
+    flex: 0 0 50%;
+}
+
+
+
+/*test only*/

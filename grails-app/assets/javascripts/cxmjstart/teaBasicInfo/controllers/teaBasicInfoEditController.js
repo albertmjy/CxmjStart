@@ -4,10 +4,18 @@ angular
     .module("cxmjstart.teaBasicInfo")
     .controller("TeaBasicInfoEditController", TeaBasicInfoEditController);
 
-function TeaBasicInfoEditController(TeaBasicInfo, $stateParams, $state, UnitLabel) {
+function TeaBasicInfoEditController($http, TeaBasicInfo, $stateParams, $state, UnitLabel) {
     var vm = this;
 
-    vm.unitLabelList = UnitLabel.list();
+    // vm.unitLabelList = UnitLabel.list();
+    $http.get("unitLabel", {cache: true}).then(function (res) {
+        var dict = []
+        res.data.forEach(function(curr, i, arr){
+            dict[curr.id] = curr
+        })
+        delete dict[0]
+        vm.unitLabelListById = dict
+    })
 
     TeaBasicInfo.get({id: $stateParams.id}, function(data) {
         vm.teaBasicInfo = new TeaBasicInfo(data);
@@ -28,4 +36,8 @@ function TeaBasicInfoEditController(TeaBasicInfo, $stateParams, $state, UnitLabe
             }
         });
     };
+
+    // bad code!! move it to database latter
+    vm.categoryList = TeaBasicInfo.categoryList
+    vm.regionList = TeaBasicInfo.regionList
 }

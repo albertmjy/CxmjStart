@@ -15,26 +15,19 @@
     <label for="year">Year
       <span class="required-indicator">*</span>
     </label>
-    <input required="" name="year" id="year" ng-model="vm.teaBasicInfo.year" type="text" />
+    <input required="" name="year" id="year" ng-model="vm.teaBasicInfo.year" type="date" placeholder="YYYY-MM-DD" />
   </div>
   <div class="fieldcontain required">
     <label for="category">Category
       <span class="required-indicator">*</span>
     </label>
-    <select required="" name="category" id="category" ng-model="vm.teaBasicInfo.category">
-      <option value="生普">生普</option>
-      <option value="熟普">熟普</option>
-    </select>
+    <input required="" name="category" id="category" ng-model="vm.teaBasicInfo.category" type="text" />
   </div>
   <div class="fieldcontain required">
     <label for="region">Region
       <span class="required-indicator">*</span>
     </label>
     <input required="" name="region" id="region" ng-model="vm.teaBasicInfo.region" type="text" />
-  </div>
-  <div class="fieldcontain">
-    <label for="city">City</label>
-    <input name="city" id="city" ng-model="vm.teaBasicInfo.city" type="text" />
   </div>
   <div class="fieldcontain">
     <label for="county">County</label>
@@ -52,10 +45,8 @@
     <label for="committee">Committee</label>
     <input name="committee" id="committee" ng-model="vm.teaBasicInfo.committee" type="text" />
   </div>
-  <div class="fieldcontain required">
-    <label for="unitLabel">Unit Label
-      <span class="required-indicator">*</span>
-    </label>
-    <select required="" name="unitLabel" id="unitLabel" ng-model="vm.teaBasicInfo.unitLabel" ng-options="unitLabel for unitLabel in vm.unitLabelList track by unitLabel.id"></select>
+  <div class="fieldcontain">
+    <label for="unitLabel">Unit Label</label>
+    <select name="unitLabel" id="unitLabel" ng-model="vm.teaBasicInfo.unitLabel" ng-options="unitLabel for unitLabel in vm.unitLabelList track by unitLabel.id"></select>
   </div>
 </fieldset>

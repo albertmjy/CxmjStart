@@ -15,20 +15,39 @@
     <label for="year">年份
       <span class="required-indicator">*</span>
     </label>
-    <input required="" name="year" id="year" ng-model="vm.teaBasicInfo.year" type="date" placeholder="YYYY-MM-DD" />
+    <!--<input required="" name="year" id="year" ng-model="vm.teaBasicInfo.year" type="date" placeholder="YYYY-MM-DD" />-->
+    <input required="" name="year" id="year" ng-model="vm.teaBasicInfo.year" type="text" />
   </div>
   <div class="fieldcontain required">
     <label for="category">茶类
       <span class="required-indicator">*</span>
     </label>
-    <input required="" name="category" id="category" ng-model="vm.teaBasicInfo.category" type="text" />
+    <select required="" name="category" id="category" ng-model="vm.teaBasicInfo.category">
+      <option value=""></option>
+      <option value="生普">生普</option>
+      <option value="熟普">熟普</option>
+    </select>
+    <!--<input required="" name="category" id="category" ng-model="vm.teaBasicInfo.category" type="text" />-->
   </div>
   <div class="fieldcontain required">
-    <label for="region">Region
+    <label for="unitLabel">规格
       <span class="required-indicator">*</span>
     </label>
-    <input required="" name="region" id="region" ng-model="vm.teaBasicInfo.region" type="text" />
+    <!--<select name="unitLabel" id="unitLabel" ng-model="vm.teaBasicInfo.unitLabel" ng-options="unitLabel for unitLabel in vm.unitLabelList track by unitLabel.id"></select>-->
+    <select required="" name="unitLabel" id="unitLabel" ng-model="vm.teaBasicInfo.unitLabel" ng-options="unitLabel.weightInGram + ' / ' + unitLabel.unit for unitLabel in vm.unitLabelListById| filter: {unitLabel:'!undefined'} track by unitLabel.id">
+      <option value=""></option>
+    </select>
   </div>
+  <div class="fieldcontain required">
+    <label for="region">大区
+      <span class="required-indicator">*</span>
+    </label>
+    <!--<input required="" name="region" id="region" ng-model="vm.teaBasicInfo.region" type="text" />-->
+    <select required="" name="region" id="region" ng-model="vm.teaBasicInfo.region" ng-options="region for region in vm.regionList">
+      <option value=""></option>
+    </select>
+  </div>
+
   <div class="fieldcontain">
     <label for="county">County</label>
     <input name="county" id="county" ng-model="vm.teaBasicInfo.county" type="text" />
@@ -44,9 +63,5 @@
   <div class="fieldcontain">
     <label for="committee">Committee</label>
     <input name="committee" id="committee" ng-model="vm.teaBasicInfo.committee" type="text" />
-  </div>
-  <div class="fieldcontain">
-    <label for="unitLabel">Unit Label</label>
-    <select name="unitLabel" id="unitLabel" ng-model="vm.teaBasicInfo.unitLabel" ng-options="unitLabel for unitLabel in vm.unitLabelList track by unitLabel.id"></select>
   </div>
 </fieldset>

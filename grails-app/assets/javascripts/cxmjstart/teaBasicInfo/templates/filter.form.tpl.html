@@ -1,0 +1,28 @@
+<fieldset class="form filter-form">
+
+  <!-- brand -->
+  <div class="brand flex" ng-show="vm.filter.QuickFilter.showOptions.brand">
+    <div class="item"><a ng-click="vm.filter.QuickFilter.submit({brand:'陈升号'})">陈升号</a></div>
+    <div class="item">  <a href="#">大一</a></div>
+
+    <div class="item"> <a href="#">一山一味</a></div>
+    <div class="item">  <a href="#">一条</a></div>
+
+    <div class="item"><a href="#">北斗神拳</a></div>
+    <div class="item"><a href="#">庐山升龙霸</a></div>
+  </div>
+  <!-- region -->
+  <div class="region flex" ng-show="vm.filter.QuickFilter.showOptions.region">
+
+    <div class="item" ng-repeat="region in vm.regionList">
+      <a ng-click="vm.filter.QuickFilter.submit({region:region})">{{region}}</a>
+    </div>
+
+  </div>
+
+  <!--<div class="">-->
+    <!--<label class="control-label">Tea Name</label>-->
+    <!--<input type="text" class="input-sm" ng-model="vm.searchService.dataModle.name" placeholder="" />-->
+  <!--</div>-->
+
+</fieldset>

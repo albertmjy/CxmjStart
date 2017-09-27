@@ -9,4 +9,5 @@ class UnitLabel {
         unit nullable: false
         weightInGram nullable: false
     }
+
 }

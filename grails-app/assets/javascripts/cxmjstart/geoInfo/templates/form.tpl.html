@@ -1,0 +1,30 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="ss">Ss
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="ss" id="ss" ng-model="vm.geoInfo.ss">
+      <option value="aa">aa</option>
+      <option value="bb">bb</option>
+      <option value="gadga">gadga</option>
+    </select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="city">City
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="city" id="city" ng-model="vm.geoInfo.city" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="age">Age
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="age" id="age" ng-model="vm.geoInfo.age" type="number" min="18" max="40" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="year">Year
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="year" id="year" ng-model="vm.geoInfo.year" type="text" />
+  </div>
+</fieldset>

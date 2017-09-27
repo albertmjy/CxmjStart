@@ -1,12 +1,15 @@
 <div class="nav" role="navigation">
     <ul>
-        <li><a ui-sref="index" class="home">Home</a></li>
-        <li><a class="list" ui-sref="teaBasicInfo.list" class="list">TeaBasicInfo List</a></li>
-        <li><a class="create" ui-sref="teaBasicInfo.create" class="create">New TeaBasicInfo</a></li>
+        <!--<li><a ui-sref="index" class="home">Home</a></li>-->
+        <!--<li><a class="list" ui-sref="teaBasicInfo.list" class="list">TeaBasicInfo List</a></li>-->
+        <!--<li><a class="create" ui-sref="teaBasicInfo.create" class="create">New TeaBasicInfo</a></li>-->
+      <li><a ui-sref="index" class="home">首页</a></li>
+      <li><a class="list" ui-sref="teaBasicInfo.list" class="list">列表</a></li>
+      <li><a class="create" ui-sref="teaBasicInfo.create" class="create">新建</a></li>
     </ul>
 </div>
 <div id="show-part" class="content scaffold-show" role="main">
-    <h1>Show TeaBasicInfo</h1>
+    <h1>基本信息</h1>
 
   <div ng-if="!vm.widthOver480" class="panel">
     <ul class="list-group">
@@ -172,7 +175,7 @@
 </ol>
     <form ng-submit="vm.delete()">
         <fieldset class="buttons">
-            <a class="edit" ui-sref="teaBasicInfo.edit({id: vm.teaBasicInfo.id})">Edit</a>
+            <a class="edit" ui-sref="teaBasicInfo.edit({id: vm.teaBasicInfo.id})">编辑</a>
             <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
         </fieldset>
     </form>

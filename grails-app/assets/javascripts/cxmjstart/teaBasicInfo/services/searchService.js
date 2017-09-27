@@ -1,11 +1,32 @@
 //= wrapped
-
+// @Deprecate
 angular
     .module("cxmjstart.teaBasicInfo")
     .factory("searchService", searchService);
 
 function searchService($http, TeaBasicInfo) {
     var showSearch = true
+
+    // // sample 1
+    // return function(max, offset){
+    //     _max = max, _offset = offset
+    //     return {
+    //         quickFilter: quickFilter,
+    //         fullFilter: fullFilter
+    //     }
+    // }
+    // // sample 2
+    // return {
+    //     init: function (max, offset) {
+    //         _max = max, _offset = offset
+    //         return {
+    //             quickFilter: quickFilter,
+    //             fullFilter: fullFilter
+    //         }
+    //     }
+    // }
+
+
     return {
         dataModle: {},
         show : false,

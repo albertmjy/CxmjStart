@@ -4,18 +4,14 @@ angular
     .module("cxmjstart.teaBasicInfo")
     .controller("TeaBasicInfoShowController", TeaBasicInfoShowController);
 
-function TeaBasicInfoShowController(TeaBasicInfo, $stateParams, $state, listLoaderService) {
+function TeaBasicInfoShowController($http, TeaBasicInfo, $stateParams, $state, listLoaderService) {
     var vm = this;
     vm.widthOver480 = window.innerWidth>480
 
     TeaBasicInfo.get({id: $stateParams.id}, function(data) {
         vm.teaBasicInfo = new TeaBasicInfo(data);
-        vm.unitLabelListById = listLoaderService.unitLabelListById
 
-        console.log(listLoaderService.unitLabelListById) // works for sharing values
-
-
-
+        console.log(listLoaderService.unitLabelListById) // works for sharing values ONLY ONCE!
 
     }, function() {
         $state.go('teaBasicInfo.list');
@@ -29,5 +25,13 @@ function TeaBasicInfoShowController(TeaBasicInfo, $stateParams, $state, listLoad
             // \rror
         });
     };
+
+    $http.get("unitLabel", {cache: true}).then(function (res) {
+        var dict = []
+        res.data.forEach(function(curr, i, arr){
+            dict[curr.id] = curr
+        })
+        vm.unitLabelListById = dict
+    })
 
 }

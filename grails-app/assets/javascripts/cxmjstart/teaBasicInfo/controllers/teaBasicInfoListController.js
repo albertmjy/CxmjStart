@@ -4,7 +4,7 @@ angular
     .module("cxmjstart.teaBasicInfo")
     .controller("TeaBasicInfoListController", TeaBasicInfoListController);
 
-function TeaBasicInfoListController(TeaBasicInfo, UnitLabel, searchService, listLoaderService) {
+function TeaBasicInfoListController($http, TeaBasicInfo, advFilterService, filterService, listLoaderService) {
     var vm = this;
 
     var max = 10, offset = 0;
@@ -13,33 +13,6 @@ function TeaBasicInfoListController(TeaBasicInfo, UnitLabel, searchService, list
     vm.widthOver480 = window.innerWidth>480
 
     // my code
-    // var searchPan = {
-    //     show: false,
-    //     showFilter: function () {
-    //         this.show = true
-    //         // console.log(listSearchService.get())
-    //     },
-    //     hideFilter: function () {
-    //         this.show = false
-    //     },
-    //     search: function () {
-    //         this.hideFilter()
-    //
-    //         // remvoe the empty properties
-    //         for (var key in searchMap){
-    //             if (!searchMap[key].trim()){
-    //                 delete searchMap[key]
-    //                 console.log("Parameter (" + key + ") was deleted since the value is empty ")
-    //             }
-    //         }
-    //         searchService.search(searchMap).$promise.then(function (data) {
-    //
-    //             vm.teaBasicInfoList = data;
-    //         })
-    //
-    //     }
-    //
-    // }
 
     console.log(listLoaderService)
     window.onscroll = listLoaderService.bottomToloadItems(max, offset)
@@ -49,13 +22,13 @@ function TeaBasicInfoListController(TeaBasicInfo, UnitLabel, searchService, list
     // var searchMap = vm.searchModel
 
     // filter actions
-    vm.searchService = searchService
-    vm.submitSearch = function () {
-        var searchMap = searchService.dataModle
-        vm.searchService.search(searchMap).$promise.then(function (data) {
-            vm.teaBasicInfoList = data
-        })
-    }
+    // vm.searchService = searchService
+    // vm.submitSearch = function () {
+    //     var searchMap = searchService.dataModle
+    //     vm.searchService.search(searchMap).$promise.then(function (data) {
+    //         vm.teaBasicInfoList = data
+    //     })
+    // }
 
     // vm.searchService = searchService
     // searchService.output(vm.teaBasicInfoList)
@@ -64,12 +37,32 @@ function TeaBasicInfoListController(TeaBasicInfo, UnitLabel, searchService, list
         vm.teaBasicInfoList = data;
     });
 
-    UnitLabel.list({max: 10, offset: 0}, function (data) {
+    // UnitLabel.list({max: 10, offset: 0}, function (data) {
+    //     var dict = []
+    //     data.forEach(function (curr, i, arr) {
+    //         dict[curr.id] = curr
+    //     })
+    //     listLoaderService.unitLabelListById = vm.unitLabelListById = dict
+    // })
+
+    $http.get("unitLabel", {cache: true}).then(function (res) {
         var dict = []
-        data.forEach(function (curr, i, arr) {
+        res.data.forEach(function(curr, i, arr){
             dict[curr.id] = curr
         })
-        listLoaderService.unitLabelListById = vm.unitLabelListById = dict
+        vm.unitLabelListById = dict
     })
+
+    vm.filter = filterService(max, offset, function(data){
+        vm.teaBasicInfoList = data;
+    })
+
+    vm.FullFilter = advFilterService(max, offset, function(data){
+        vm.teaBasicInfoList = data;
+    })
+
+    // really bad! change it latter!!!!!!!!!!!!
+    vm.categoryList = TeaBasicInfo.categoryList
+    vm.regionList = TeaBasicInfo.regionList
 
 }

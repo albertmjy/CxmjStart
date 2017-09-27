@@ -17,6 +17,7 @@ class UrlMappings {
 
         "/tBasic"(resources: "teaBasicInfo")
         get "/$controller/search"(action:"search")
+        get "/$controller/filter"(action:"filter")
 
 //        get "/tBasic/tb" (controller:"teaBasicInfo", action: "myTest")
 

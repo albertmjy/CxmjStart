@@ -1,0 +1,75 @@
+<div>
+  <button type="button" ng-click="vm.FullFilter.hideFilter()" >Go Back >></button>
+  <!--<button type="button" ng-click="vm.searchService.hideFilter()" >Go Back >></button>-->
+</div>
+
+<form id="full-filter" class="form">
+  <div class="">
+    <label class="control-label">Tea Name</label>
+    <input type="text" class="input-sm" name="name" ng-model="vm.searchService.dataModle.name" placeholder="" />
+  </div>
+
+  <div class="">
+    <label class="control-label">Brand</label>
+    <input type="text" class="input-sm" name="brand" ng-model="vm.searchService.dataModle.brand" placeholder="" />
+  </div>
+
+  <div class="">
+    <label class="control-label">Year</label>
+    <input name="year" class="input-sm" ng-model="vm.searchService.dataModle.year" type="text" />
+  </div>
+
+  <div class="fieldcontain">
+    <label class="control-label">Category</label>
+    <select name="category" ng-model="vm.searchService.dataModle.category">
+      <option value=""></option>
+      <option value="生普">生普</option>
+      <option value="熟普">熟普</option>
+    </select>
+  </div>
+
+  <div class="fieldcontain">
+    <label class="control-label">Unit</label>
+    <select name="unitLabel" ng-model="vm.searchService.dataModle.unit" ng-options="unitLabel.weightInGram + ' / ' + unitLabel.unit for unitLabel in vm.unitLabelListById| filter: {unitLabel:'!undefined'} track by unitLabel.id">
+      <option value=""></option>
+    </select>
+  </div>
+
+  <div class="">
+    <label class="control-label">Region</label>
+    <input type="text" name="region" class="input-sm" ng-model="vm.searchService.dataModle.region" placeholder="" />
+  </div>
+
+  <div class="">
+    <label class="control-label">City</label>
+    <input type="text" name="city" class="input-sm" ng-model="vm.searchService.dataModle.city" placeholder="" />
+  </div>
+
+  <div class="">
+    <label class="control-label">County</label>
+    <input type="text" name="county" class="input-sm" ng-model="vm.searchService.dataModle.county" placeholder="" />
+  </div>
+
+  <div class="">
+    <label class="control-label">Township</label>
+    <input type="text" name="township" class="input-sm" ng-model="vm.searchService.dataModle.township" placeholder="" />
+  </div>
+
+  <div class="">
+    <label class="control-label">Committee</label>
+    <input type="text" name="committee" class="input-sm" ng-model="vm.searchService.dataModle.committee" placeholder="" />
+  </div>
+
+
+  <hr />
+
+  <div class="form-group">
+    <button type="reset" class="col-xs-6 btn btn-default">Reset</button>
+    <button class="col-xs-6 btn btn-primary" ng-click="vm.FullFilter.submit()" >Search</button>
+
+    <!--<button type="reset" class="col-xs-6 btn btn-default" ng-click="vm.searchService.reset()" >Reset</button>-->
+    <!--<button class="col-xs-6 btn btn-primary" ng-click="vm.submitSearch()" >Search</button>-->
+
+    <!--<a ui-sref="index" ng-click="vm.searchService.hideFilter()" class="create">Search</a>-->
+  </div>
+</form>

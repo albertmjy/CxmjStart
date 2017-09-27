@@ -8,9 +8,13 @@ class TeaEvaluationEventInfo {
     String hostName
     String intro
 
-    List<TeaBasicInfo> teaBasicInfo
-    List<Users> users
-    List<TeaEvaluationInfo> teaEvaluationInfo
+//    List<TeaBasicInfo> teaBasicInfo
+//    List<Users> users
+//    List<TeaEvaluationInfo> teaEvaluationInfo
+
+    TeaBasicInfo teaBasicInfo
+    Users users
+    TeaEvaluationInfo teaEvaluationInfo
 
     // additional
 //    List<String> teaNames
@@ -21,14 +25,15 @@ class TeaEvaluationEventInfo {
         hostName nullable: true
     }
 
-    static hasMany = [teaBasicInfo: TeaBasicInfo, users: Users, teaEvaluationInfo: TeaEvaluationInfo]
+//    static hasMany = [teaBasicInfo: TeaBasicInfo, users: Users, teaEvaluationInfo: TeaEvaluationInfo]
 
 //    static fetchMode = [users:"eager"]
 
     static mapping = {
-        teaBasicInfo lazy: false
-        users lazy: false
-        teaEvaluationInfo lazy: false
+//        teaBasicInfo lazy: false
+//        users lazy: false
+//        teaEvaluationInfo lazy: false
+
 //        teaEvaluationInfo lazy: false
 //        teaEvaluationInfo fetch: "join"
 

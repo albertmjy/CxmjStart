@@ -21,16 +21,20 @@ class TeaBasicInfoController extends RestfulController {
      */
     @Override
     def index(Integer max) {
+        println "I;m in index method"
         params.max = Math.min(max ?: 10, 100)
         print "${resourceName}Count" + countResources()
-
-        println params
 
         response.addIntHeader("total-count", countResources())  // works!
         response.setHeader("Link", "<https://api.github.com/user/repos?page=3&per_page=100>; rel=\"next\", <https://api.github.com/user/repos?page=50&per_page=100>; rel=\"last\"")
 
-        def list = listAllResources(params)
 
+        def list
+        try {
+            list = listAllResources(params)
+        } catch (e){
+            e.printStackTrace()
+        }
 
 
         respond list, model: ["test": 123]
@@ -51,6 +55,27 @@ class TeaBasicInfoController extends RestfulController {
 //        JSON.use('deep'){
 //            render list as JSON
 //        }
+    }
+
+    def filter(Integer max){
+        println "I;m in filter method"
+        params.max = Math.min(max ?: 10, 100)
+        print "${resourceName}Count" + countResources()
+
+        response.addIntHeader("total-count", countResources())  // works!
+        response.setHeader("Link", "<https://api.github.com/user/repos?page=3&per_page=100>; rel=\"next\", <https://api.github.com/user/repos?page=50&per_page=100>; rel=\"last\"")
+
+        def filterJson = JSON.parse(params.params)
+
+        def t = TeaBasicInfo.createCriteria()
+        def list = t.list(params){
+            filterJson.each {k, v ->
+                eq(k, v)
+            }
+        }
+        respond list, model: ["test": 123]
+
+
     }
 
     def search(Integer max){
@@ -113,4 +138,5 @@ class TeaBasicInfoController extends RestfulController {
 
 //        respond TeaBasicInfo.findAll()
     }
+
 }

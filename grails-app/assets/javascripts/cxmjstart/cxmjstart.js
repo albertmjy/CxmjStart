@@ -21,5 +21,5 @@ angular.module("cxmjstart", [
     "cxmjstart.teaInventoryInfo",
     "cxmjstart.teaEvaluationEventInfo",
     "cxmjstart.teaEvaluationRecord",
-    // "cxmjstart.geoInfo"
+    "cxmjstart.geoInfo"
 ]);

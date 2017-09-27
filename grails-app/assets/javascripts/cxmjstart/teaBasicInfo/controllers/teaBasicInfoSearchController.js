@@ -1,5 +1,7 @@
 //= wrapped
 
+// @Deprecate
+
 angular
     .module("cxmjstart.teaBasicInfo")
     .controller("TeaBasicInfoSearchController", TeaBasicInfoSearchController);

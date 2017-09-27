@@ -11,9 +11,10 @@
     </ul>
 
     <form name="updateTeaBasicInfo" ng-submit="vm.updateTeaBasicInfo()">
-        <fieldset class="form">
-            <ng-include src="'/cxmjstart/teaBasicInfo/form.html'"></ng-include>
-        </fieldset>
+        <!--<fieldset class="form">-->
+            <!--<ng-include src="'/cxmjstart/teaBasicInfo/form.mob.html'"></ng-include>-->
+        <!--</fieldset>-->
+        <ng-include src="'/cxmjstart/teaBasicInfo/form.mob.html'"></ng-include>
         <fieldset class="buttons">
             <input type="submit" class="save" value="Update" />
         </fieldset>
