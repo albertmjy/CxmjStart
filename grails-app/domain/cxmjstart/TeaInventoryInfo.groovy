@@ -7,21 +7,21 @@ class TeaInventoryInfo {
 
     String inOrOut
     Integer quantity
-    UnitLabel unitLabel
+//    UnitLabel unitLabel
 
     Date requestDate
     Date effectiveData
 
     Double price
     String owner
+    String comments
 
     static constraints = {
-        inOrOut nullable: false
-        quantity nullable: false
-        unitLabel nullable: false
-        requestDate nullable: false
+
+        inOrOut inList: ["in", "out"]
         effectiveData nullable: true
         price nullable: true
-        owner nullable: false
+        comments nullable: true
+
     }
 }

@@ -37,7 +37,11 @@ class TeaBasicInfoController extends RestfulController {
         }
 
 
-        respond list, model: ["test": 123]
+        JSON.use('deep'){
+            render list as JSON
+        }
+
+//        respond list, model: ["test": 123]
 
 
 //        if (params.search){
